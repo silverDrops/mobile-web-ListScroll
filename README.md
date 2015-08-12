@@ -8,15 +8,19 @@
  @dependencies 依赖zepto或JQuery，建议使用zepto
  
 2.body滚动条事件绑定应用例子
-  var wallList = new Listscroll({
+
+  var wallList = new Listscroll(
+  
       $listWrapper: $('.content'),
       listTagObj:{
           tagName: 'ul',
           className: 'wall-list'
       }
+      
   });
 
   window.onscroll = function() {
+  
       if (roll.isTop() && wallList.hasUpRemoved()) {
           wallList.prevRemoved();
       } else if (roll.isBottom() && wallList.getIsRemoving()) {
@@ -26,4 +30,5 @@
               发起获取列表请求操作
           }
       }
+      
   }
